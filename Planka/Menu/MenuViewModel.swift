@@ -39,6 +39,17 @@ enum MenuOptions: CustomStringConvertible {
         }
     }
     
+    var systemImage: String {
+        switch self {
+        case .company: return "signature"
+        case .laborants: return "person.3"
+        case .baseStations: return "externaldrive.connected.to.line.below"
+        case .thermalRods: return "appletvremote.gen1"
+        case .storage: return "house"
+        case .shop: return "cart"
+        }
+    }
+    
     var index: Int {
         switch self {
         case .company: return 0

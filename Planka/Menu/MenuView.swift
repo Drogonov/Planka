@@ -12,16 +12,29 @@ struct MenuView: View {
     var buttonTapped: (MenuOptions) -> Void
     
     var body: some View {
-        List {
-            ForEach(menuButtons, id: \.self) { item in
-                Button {
-                    buttonTapped(item)
-                } label: {
-                    Text(item.description)
-                        .foregroundColor(.primary)
+        VStack(alignment: .center) {
+            Text("Меню")
+                .foregroundColor(.primary)
+                .font(.headline)
+            
+            List {
+                ForEach(menuButtons, id: \.self) { item in
+                    Button {
+                        buttonTapped(item)
+                    } label: {
+                        HStack {
+                            Image(systemName: item.systemImage)
+                                .foregroundColor(.primary)
+                                .frame(width: 32)
+                            Text(item.description)
+                                .foregroundColor(.primary)
+                            Spacer()
+                        }
+                    }
                 }
             }
         }
+        .padding(.vertical, 16)
     }
 }
 

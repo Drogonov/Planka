@@ -73,7 +73,7 @@ extension MenuViewController {
         view.addSubview(menuCtrl.view)
         
         menuCtrl.view.anchor(
-            top: view.topAnchor,
+            top: view.safeAreaLayoutGuide.topAnchor,
             leading: view.safeAreaLayoutGuide.leftAnchor,
             bottom: view.safeAreaLayoutGuide.bottomAnchor,
             trailing: view.safeAreaLayoutGuide.rightAnchor,
