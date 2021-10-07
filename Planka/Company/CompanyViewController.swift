@@ -19,11 +19,6 @@ class CompanyViewController: UIViewController {
     // MARK: - Helper Functions
     
     private func configureUI() {
-        view.backgroundColor = .blue
-        configureNavigationBar()
-    }
-    
-    private func configureNavigationBar() {
-        navigationItem.title = "Company"
+        view.backgroundColor = .systemBackground
     }
 }

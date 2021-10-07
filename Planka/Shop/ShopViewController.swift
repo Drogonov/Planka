@@ -1,5 +1,5 @@
 //
-//  LaborantsViewController.swift
+//  ShopViewController.swift
 //  Planka
 //
 //  Created by Anton Vlezko on 07.10.2021.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class LaborantsViewController: UIViewController {
+class ShopViewController: UIViewController {
     
     // MARK: - Lifecycle
     

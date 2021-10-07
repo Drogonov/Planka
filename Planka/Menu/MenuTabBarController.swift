@@ -14,8 +14,10 @@ protocol MenuTabBarControllerDelegate: AnyObject {
 class MenuTabBarController: UITabBarController, UITabBarControllerDelegate {
     
     // MARK: - Properties
-    private lazy var companyVC = CompanyViewController()
-    private lazy var laborantsVC = LaborantsViewController()
+    private var menuOptions: [MenuOptions] = []
+    
+//    private lazy var companyVC = CompanyViewController()
+//    private lazy var laborantsVC = LaborantsViewController()
     
     weak var tabBarDelegate: MenuTabBarControllerDelegate?
     
@@ -53,38 +55,68 @@ class MenuTabBarController: UITabBarController, UITabBarControllerDelegate {
     }
     
     private func configureTabBar() {
-        viewControllers = constructViewControllersArray()
+        viewControllers = constructViewControllersArray(options: menuOptions)
         selectedIndex = 0
         tabBar.tintColor = .label
         tabBar.isHidden = true
     }
     
-    private func constructViewControllersArray() -> [UIViewController] {
-        let companyNavController = constructNavController(
-            rootViewController: companyVC
-        )
-        
-        let laborantsNavController = constructNavController(
-            rootViewController: laborantsVC
-        )
-        
-        return [companyNavController, laborantsNavController]
+    private func constructViewControllersArray(options: [MenuOptions]) -> [UIViewController] {
+        var vcArray: [UIViewController] = []
+        options.forEach { option in
+            let vc = constructViewControllerWithOption(option: option)
+            let navVC = constructViewController(vc: vc, option: option)
+            vcArray.append(navVC)
+        }
+        return vcArray
     }
     
-    private func constructNavController(rootViewController: UIViewController) -> UINavigationController {
-        let navController = UINavigationController(rootViewController: rootViewController)
+    private func constructViewControllerWithOption(option: MenuOptions) -> UIViewController {
+        switch option {
+        case .company:
+            return CompanyViewController()
+        case .laborants:
+            return LaborantsViewController()
+        case .baseStations:
+            return BaseStationsViewController()
+        case .thermalRods:
+            return ThermalRodsViewController()
+        case .storage:
+            return StorageViewController()
+        case .shop:
+            return ShopViewController()
+        }
+    }
+    
+    private func constructViewController(vc: UIViewController, option: MenuOptions) -> UINavigationController {
+        return constructNavController(rootViewController: vc, option: option)
+    }
+    
+    private func constructNavController(rootViewController: UIViewController, option: MenuOptions) -> UINavigationController {
+        configureRootViewController(rootViewController: rootViewController, option: option)
         
+        let navController = UINavigationController(rootViewController: rootViewController)
+        navController.navigationBar.tintColor = .orange
+        return navController
+    }
+    
+    private func configureRootViewController(rootViewController: UIViewController, option: MenuOptions) {
         let image = UIImage(systemName: "list.bullet")!
+        rootViewController.navigationItem.title = option.description
         rootViewController.navigationItem.leftBarButtonItem = UIBarButtonItem(
             image: image,
             style: .plain,
             target: self,
             action: #selector(showMenu)
         )
-        return navController
     }
     
     func selectedIndexChangedWith(index: Int) {
         selectedIndex = index
+    }
+    
+    func addMenuOptions(options: [MenuOptions]) {
+        menuOptions = options
+        configureTabBar()
     }
 }

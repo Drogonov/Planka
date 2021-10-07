@@ -17,7 +17,8 @@ class MenuViewController: UIViewController {
     
     // MARK: - Properties
     
-    let menuButtons: [MenuOptions] = [.company, .laborants]
+    private var menuButtons: [MenuOptions] = []
+    
     weak var delegate: MenuViewControllerDelegate?
     
     // MARK: - Lifecycle
@@ -29,7 +30,7 @@ class MenuViewController: UIViewController {
     
     // MARK: - Selectors
     
-    @objc func handleGesture(gesture: UISwipeGestureRecognizer) -> Void {
+    @objc private func handleGesture(gesture: UISwipeGestureRecognizer) -> Void {
         if gesture.direction == .left {
             delegate?.handleTabBarToogle()
         }
@@ -48,7 +49,7 @@ class MenuViewController: UIViewController {
         configureMenu()
     }
     
-    func configureMenu() {
+    private func configureMenu() {
         let menuView = MenuView(
             menuButtons: menuButtons,
             buttonTapped: { option in
@@ -58,7 +59,7 @@ class MenuViewController: UIViewController {
         addMenuToVC(menuView: menuView)
     }
     
-    func addMenuToVC(menuView: MenuView) {
+    private func addMenuToVC(menuView: MenuView) {
         let menuCtrl = UIHostingController(rootView: menuView)
         addChild(menuCtrl)
         view.addSubview(menuCtrl.view)
@@ -70,5 +71,10 @@ class MenuViewController: UIViewController {
             trailing: view.safeAreaLayoutGuide.rightAnchor,
             paddingRight: 80
         )
+    }
+    
+    func addMenuOptions(options: [MenuOptions]) {
+        menuButtons = options
+        configureMenu()
     }
 }

@@ -15,8 +15,17 @@ class ContainerViewController: UIViewController {
     
     // MARK: - Properties
     
+    let menuButtons: [MenuOptions] = [
+        .company,
+        .laborants,
+        .baseStations,
+        .thermalRods,
+        .storage,
+        .shop
+    ]
+    
     private var loginVC = LoginViewController()
-    private var menuVC = MenuViewController()
+    private lazy var menuVC = MenuViewController()
     private var menuTabBar = MenuTabBarController()
     
     weak var delegate: ContainerViewControllerDelegate?
@@ -49,6 +58,7 @@ class ContainerViewController: UIViewController {
     
     private func configureMenuTabBar() {
         menuTabBar.tabBarDelegate = self
+        menuTabBar.addMenuOptions(options: menuButtons)
         
         addChild(menuTabBar)
         menuTabBar.didMove(toParent: self)
@@ -58,6 +68,7 @@ class ContainerViewController: UIViewController {
     
     private func configureMenuVC() {
         menuVC.delegate = self
+        menuVC.addMenuOptions(options: menuButtons)
         
         addChild(menuVC)
         menuVC.didMove(toParent: self)
@@ -107,6 +118,8 @@ extension ContainerViewController: MenuViewControllerDelegate {
     
     func menuButtonTappedWithOption(option: MenuOptions) {
         menuTabBar.selectedIndexChangedWith(index: option.index)
+        isExpanded.toggle()
+        animateMenu(shouldExpand: isExpanded)
     }
 }
 

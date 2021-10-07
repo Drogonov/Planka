@@ -15,6 +15,11 @@
 		841CE445270EEE5100E9DA64 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841CE444270EEE5100E9DA64 /* MenuView.swift */; };
 		841CE448270EF75000E9DA64 /* Extension + View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841CE447270EF75000E9DA64 /* Extension + View.swift */; };
 		841CE44A270F09A000E9DA64 /* MenuTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841CE449270F09A000E9DA64 /* MenuTabBarController.swift */; };
+		841CE450270F1E1800E9DA64 /* BaseStationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841CE44F270F1E1800E9DA64 /* BaseStationsViewController.swift */; };
+		841CE452270F1E2A00E9DA64 /* ThermalRodsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841CE451270F1E2A00E9DA64 /* ThermalRodsViewController.swift */; };
+		841CE454270F1E3400E9DA64 /* StorageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841CE453270F1E3400E9DA64 /* StorageViewController.swift */; };
+		841CE456270F1E3F00E9DA64 /* ShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841CE455270F1E3F00E9DA64 /* ShopViewController.swift */; };
+		841CE458270F264A00E9DA64 /* MenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841CE457270F264A00E9DA64 /* MenuViewModel.swift */; };
 		84D398D6270B62E100D0ABE1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D398D5270B62E100D0ABE1 /* AppDelegate.swift */; };
 		84D398D8270B62E100D0ABE1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D398D7270B62E100D0ABE1 /* SceneDelegate.swift */; };
 		84D398DF270B62E200D0ABE1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84D398DE270B62E200D0ABE1 /* Assets.xcassets */; };
@@ -22,7 +27,6 @@
 		84D398ED270B62E300D0ABE1 /* PlankaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D398EC270B62E300D0ABE1 /* PlankaTests.swift */; };
 		84D398F7270B62E300D0ABE1 /* PlankaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D398F6270B62E300D0ABE1 /* PlankaUITests.swift */; };
 		84D398F9270B62E300D0ABE1 /* PlankaUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D398F8270B62E300D0ABE1 /* PlankaUITestsLaunchTests.swift */; };
-		84D39906270B631500D0ABE1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D39905270B631500D0ABE1 /* ContentView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +55,11 @@
 		841CE444270EEE5100E9DA64 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 		841CE447270EF75000E9DA64 /* Extension + View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + View.swift"; sourceTree = "<group>"; };
 		841CE449270F09A000E9DA64 /* MenuTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTabBarController.swift; sourceTree = "<group>"; };
+		841CE44F270F1E1800E9DA64 /* BaseStationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseStationsViewController.swift; sourceTree = "<group>"; };
+		841CE451270F1E2A00E9DA64 /* ThermalRodsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThermalRodsViewController.swift; sourceTree = "<group>"; };
+		841CE453270F1E3400E9DA64 /* StorageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageViewController.swift; sourceTree = "<group>"; };
+		841CE455270F1E3F00E9DA64 /* ShopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopViewController.swift; sourceTree = "<group>"; };
+		841CE457270F264A00E9DA64 /* MenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewModel.swift; sourceTree = "<group>"; };
 		84D398D2270B62E100D0ABE1 /* Planka.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Planka.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84D398D5270B62E100D0ABE1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		84D398D7270B62E100D0ABE1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -62,7 +71,6 @@
 		84D398F2270B62E300D0ABE1 /* PlankaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PlankaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		84D398F6270B62E300D0ABE1 /* PlankaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlankaUITests.swift; sourceTree = "<group>"; };
 		84D398F8270B62E300D0ABE1 /* PlankaUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlankaUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		84D39905270B631500D0ABE1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +113,7 @@
 				841CE449270F09A000E9DA64 /* MenuTabBarController.swift */,
 				841CE442270EEC8900E9DA64 /* MenuViewController.swift */,
 				841CE444270EEE5100E9DA64 /* MenuView.swift */,
+				841CE457270F264A00E9DA64 /* MenuViewModel.swift */,
 			);
 			path = Menu;
 			sourceTree = "<group>";
@@ -133,6 +142,38 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
+		841CE44B270F1D9500E9DA64 /* ThernalRods */ = {
+			isa = PBXGroup;
+			children = (
+				841CE451270F1E2A00E9DA64 /* ThermalRodsViewController.swift */,
+			);
+			path = ThernalRods;
+			sourceTree = "<group>";
+		};
+		841CE44C270F1DA800E9DA64 /* Storage */ = {
+			isa = PBXGroup;
+			children = (
+				841CE453270F1E3400E9DA64 /* StorageViewController.swift */,
+			);
+			path = Storage;
+			sourceTree = "<group>";
+		};
+		841CE44D270F1DB700E9DA64 /* BaseStations */ = {
+			isa = PBXGroup;
+			children = (
+				841CE44F270F1E1800E9DA64 /* BaseStationsViewController.swift */,
+			);
+			path = BaseStations;
+			sourceTree = "<group>";
+		};
+		841CE44E270F1DC200E9DA64 /* Shop */ = {
+			isa = PBXGroup;
+			children = (
+				841CE455270F1E3F00E9DA64 /* ShopViewController.swift */,
+			);
+			path = Shop;
+			sourceTree = "<group>";
+		};
 		84D398C9270B62E100D0ABE1 = {
 			isa = PBXGroup;
 			children = (
@@ -156,14 +197,17 @@
 		84D398D4270B62E100D0ABE1 /* Planka */ = {
 			isa = PBXGroup;
 			children = (
-				841CE446270EF72D00E9DA64 /* Utils */,
 				841CE43B270EE69100E9DA64 /* Menu */,
 				841CE437270EE5FB00E9DA64 /* Auth */,
-				841CE43D270EE6CF00E9DA64 /* Laborants */,
 				841CE43C270EE6A000E9DA64 /* Company */,
+				841CE43D270EE6CF00E9DA64 /* Laborants */,
+				841CE44D270F1DB700E9DA64 /* BaseStations */,
+				841CE44B270F1D9500E9DA64 /* ThernalRods */,
+				841CE44C270F1DA800E9DA64 /* Storage */,
+				841CE44E270F1DC200E9DA64 /* Shop */,
+				841CE446270EF72D00E9DA64 /* Utils */,
 				84D398D5270B62E100D0ABE1 /* AppDelegate.swift */,
 				84D398D7270B62E100D0ABE1 /* SceneDelegate.swift */,
-				84D39905270B631500D0ABE1 /* ContentView.swift */,
 				84D398DE270B62E200D0ABE1 /* Assets.xcassets */,
 				84D398E0270B62E200D0ABE1 /* LaunchScreen.storyboard */,
 				84D398E3270B62E200D0ABE1 /* Info.plist */,
@@ -318,14 +362,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				841CE450270F1E1800E9DA64 /* BaseStationsViewController.swift in Sources */,
+				841CE452270F1E2A00E9DA64 /* ThermalRodsViewController.swift in Sources */,
 				84D398D6270B62E100D0ABE1 /* AppDelegate.swift in Sources */,
-				84D39906270B631500D0ABE1 /* ContentView.swift in Sources */,
+				841CE458270F264A00E9DA64 /* MenuViewModel.swift in Sources */,
 				841CE436270EE24100E9DA64 /* ContainerViewController.swift in Sources */,
 				841CE43A270EE68200E9DA64 /* LoginViewController.swift in Sources */,
 				841CE448270EF75000E9DA64 /* Extension + View.swift in Sources */,
 				841CE445270EEE5100E9DA64 /* MenuView.swift in Sources */,
+				841CE456270F1E3F00E9DA64 /* ShopViewController.swift in Sources */,
 				841CE44A270F09A000E9DA64 /* MenuTabBarController.swift in Sources */,
 				84D398D8270B62E100D0ABE1 /* SceneDelegate.swift in Sources */,
+				841CE454270F1E3400E9DA64 /* StorageViewController.swift in Sources */,
 				841CE441270EE70300E9DA64 /* CompanyViewController.swift in Sources */,
 				841CE43F270EE6F100E9DA64 /* LaborantsViewController.swift in Sources */,
 				841CE443270EEC8900E9DA64 /* MenuViewController.swift in Sources */,
