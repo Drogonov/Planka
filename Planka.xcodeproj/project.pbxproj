@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		841CE436270EE24100E9DA64 /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841CE435270EE24100E9DA64 /* ContainerViewController.swift */; };
+		841CE43A270EE68200E9DA64 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841CE439270EE68200E9DA64 /* LoginViewController.swift */; };
+		841CE43F270EE6F100E9DA64 /* LaborantsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841CE43E270EE6F100E9DA64 /* LaborantsViewController.swift */; };
+		841CE441270EE70300E9DA64 /* CompanyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841CE440270EE70300E9DA64 /* CompanyViewController.swift */; };
+		841CE443270EEC8900E9DA64 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841CE442270EEC8900E9DA64 /* MenuViewController.swift */; };
+		841CE445270EEE5100E9DA64 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841CE444270EEE5100E9DA64 /* MenuView.swift */; };
+		841CE448270EF75000E9DA64 /* Extension + View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841CE447270EF75000E9DA64 /* Extension + View.swift */; };
+		841CE44A270F09A000E9DA64 /* MenuTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841CE449270F09A000E9DA64 /* MenuTabBarController.swift */; };
 		84D398D6270B62E100D0ABE1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D398D5270B62E100D0ABE1 /* AppDelegate.swift */; };
 		84D398D8270B62E100D0ABE1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D398D7270B62E100D0ABE1 /* SceneDelegate.swift */; };
 		84D398DF270B62E200D0ABE1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84D398DE270B62E200D0ABE1 /* Assets.xcassets */; };
@@ -35,6 +43,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		841CE435270EE24100E9DA64 /* ContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
+		841CE439270EE68200E9DA64 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		841CE43E270EE6F100E9DA64 /* LaborantsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaborantsViewController.swift; sourceTree = "<group>"; };
+		841CE440270EE70300E9DA64 /* CompanyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyViewController.swift; sourceTree = "<group>"; };
+		841CE442270EEC8900E9DA64 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		841CE444270EEE5100E9DA64 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
+		841CE447270EF75000E9DA64 /* Extension + View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + View.swift"; sourceTree = "<group>"; };
+		841CE449270F09A000E9DA64 /* MenuTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTabBarController.swift; sourceTree = "<group>"; };
 		84D398D2270B62E100D0ABE1 /* Planka.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Planka.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84D398D5270B62E100D0ABE1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		84D398D7270B62E100D0ABE1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -74,6 +90,49 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		841CE437270EE5FB00E9DA64 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				841CE439270EE68200E9DA64 /* LoginViewController.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		841CE43B270EE69100E9DA64 /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				841CE435270EE24100E9DA64 /* ContainerViewController.swift */,
+				841CE449270F09A000E9DA64 /* MenuTabBarController.swift */,
+				841CE442270EEC8900E9DA64 /* MenuViewController.swift */,
+				841CE444270EEE5100E9DA64 /* MenuView.swift */,
+			);
+			path = Menu;
+			sourceTree = "<group>";
+		};
+		841CE43C270EE6A000E9DA64 /* Company */ = {
+			isa = PBXGroup;
+			children = (
+				841CE440270EE70300E9DA64 /* CompanyViewController.swift */,
+			);
+			path = Company;
+			sourceTree = "<group>";
+		};
+		841CE43D270EE6CF00E9DA64 /* Laborants */ = {
+			isa = PBXGroup;
+			children = (
+				841CE43E270EE6F100E9DA64 /* LaborantsViewController.swift */,
+			);
+			path = Laborants;
+			sourceTree = "<group>";
+		};
+		841CE446270EF72D00E9DA64 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				841CE447270EF75000E9DA64 /* Extension + View.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		84D398C9270B62E100D0ABE1 = {
 			isa = PBXGroup;
 			children = (
@@ -97,6 +156,11 @@
 		84D398D4270B62E100D0ABE1 /* Planka */ = {
 			isa = PBXGroup;
 			children = (
+				841CE446270EF72D00E9DA64 /* Utils */,
+				841CE43B270EE69100E9DA64 /* Menu */,
+				841CE437270EE5FB00E9DA64 /* Auth */,
+				841CE43D270EE6CF00E9DA64 /* Laborants */,
+				841CE43C270EE6A000E9DA64 /* Company */,
 				84D398D5270B62E100D0ABE1 /* AppDelegate.swift */,
 				84D398D7270B62E100D0ABE1 /* SceneDelegate.swift */,
 				84D39905270B631500D0ABE1 /* ContentView.swift */,
@@ -256,7 +320,15 @@
 			files = (
 				84D398D6270B62E100D0ABE1 /* AppDelegate.swift in Sources */,
 				84D39906270B631500D0ABE1 /* ContentView.swift in Sources */,
+				841CE436270EE24100E9DA64 /* ContainerViewController.swift in Sources */,
+				841CE43A270EE68200E9DA64 /* LoginViewController.swift in Sources */,
+				841CE448270EF75000E9DA64 /* Extension + View.swift in Sources */,
+				841CE445270EEE5100E9DA64 /* MenuView.swift in Sources */,
+				841CE44A270F09A000E9DA64 /* MenuTabBarController.swift in Sources */,
 				84D398D8270B62E100D0ABE1 /* SceneDelegate.swift in Sources */,
+				841CE441270EE70300E9DA64 /* CompanyViewController.swift in Sources */,
+				841CE43F270EE6F100E9DA64 /* LaborantsViewController.swift in Sources */,
+				841CE443270EEC8900E9DA64 /* MenuViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
