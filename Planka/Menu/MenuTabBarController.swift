@@ -14,11 +14,15 @@ protocol MenuTabBarControllerDelegate: AnyObject {
 class MenuTabBarController: UITabBarController, UITabBarControllerDelegate {
     
     // MARK: - Properties
+    
+    lazy var companyVC = CompanyViewController()
+    lazy var laborantsVC = LaborantsViewController()
+    lazy var baseStationsVC = BaseStationsViewController()
+    lazy var thermalRodsVC = ThermalRodsViewController()
+    lazy var storageVC = StorageViewController()
+    lazy var shopVC = ShopViewController()
+    
     private var menuOptions: [MenuOptions] = []
-    
-//    private lazy var companyVC = CompanyViewController()
-//    private lazy var laborantsVC = LaborantsViewController()
-    
     weak var tabBarDelegate: MenuTabBarControllerDelegate?
     
     // MARK: - Lifecycle
@@ -49,6 +53,19 @@ class MenuTabBarController: UITabBarController, UITabBarControllerDelegate {
     
     // MARK: - Helper Functions
     
+    func selectedIndexChangedWith(index: Int) {
+        selectedIndex = index
+    }
+    
+    func addMenuOptions(options: [MenuOptions]) {
+        menuOptions = options
+        configureTabBar()
+    }
+}
+
+// MARK: - Configure UI
+
+extension MenuTabBarController {
     private func configureUI() {
         view.backgroundColor = .systemBackground
         configureTabBar()
@@ -62,45 +79,47 @@ class MenuTabBarController: UITabBarController, UITabBarControllerDelegate {
     }
     
     private func constructViewControllersArray(options: [MenuOptions]) -> [UIViewController] {
-        var vcArray: [UIViewController] = []
+        var viewControllersArray: [UIViewController] = []
         options.forEach { option in
-            let vc = constructViewControllerWithOption(option: option)
-            let navVC = constructViewController(vc: vc, option: option)
-            vcArray.append(navVC)
+            let rootViewController = constructViewControllerWithOption(option: option)
+            let navController = constructNavController(
+                rootViewController: rootViewController,
+                option: option
+            )
+            viewControllersArray.append(navController)
         }
-        return vcArray
+        return viewControllersArray
     }
     
     private func constructViewControllerWithOption(option: MenuOptions) -> UIViewController {
         switch option {
         case .company:
-            return CompanyViewController()
+            return companyVC
         case .laborants:
-            return LaborantsViewController()
+            return laborantsVC
         case .baseStations:
-            return BaseStationsViewController()
+            return baseStationsVC
         case .thermalRods:
-            return ThermalRodsViewController()
+            return thermalRodsVC
         case .storage:
-            return StorageViewController()
+            return storageVC
         case .shop:
-            return ShopViewController()
+            return shopVC
         }
     }
     
-    private func constructViewController(vc: UIViewController, option: MenuOptions) -> UINavigationController {
-        return constructNavController(rootViewController: vc, option: option)
-    }
-    
     private func constructNavController(rootViewController: UIViewController, option: MenuOptions) -> UINavigationController {
-        configureRootViewController(rootViewController: rootViewController, option: option)
+        configureViewControllerWithOption(
+            rootViewController: rootViewController,
+            option: option
+        )
         
         let navController = UINavigationController(rootViewController: rootViewController)
         navController.navigationBar.tintColor = .orange
         return navController
     }
     
-    private func configureRootViewController(rootViewController: UIViewController, option: MenuOptions) {
+    private func configureViewControllerWithOption(rootViewController: UIViewController, option: MenuOptions) {
         let image = UIImage(systemName: "list.bullet")!
         rootViewController.navigationItem.title = option.description
         rootViewController.navigationItem.leftBarButtonItem = UIBarButtonItem(
@@ -109,14 +128,5 @@ class MenuTabBarController: UITabBarController, UITabBarControllerDelegate {
             target: self,
             action: #selector(showMenu)
         )
-    }
-    
-    func selectedIndexChangedWith(index: Int) {
-        selectedIndex = index
-    }
-    
-    func addMenuOptions(options: [MenuOptions]) {
-        menuOptions = options
-        configureTabBar()
     }
 }

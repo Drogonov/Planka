@@ -15,22 +15,13 @@ class ContainerViewController: UIViewController {
     
     // MARK: - Properties
     
-    let menuButtons: [MenuOptions] = [
-        .company,
-        .laborants,
-        .baseStations,
-        .thermalRods,
-        .storage,
-        .shop
-    ]
-    
+    var viewModel = MenuViewModel()
+    weak var delegate: ContainerViewControllerDelegate?
+
     private var loginVC = LoginViewController()
-    private lazy var menuVC = MenuViewController()
+    private var menuVC = MenuViewController()
     private var menuTabBar = MenuTabBarController()
     
-    weak var delegate: ContainerViewControllerDelegate?
-    
-    private var isExpanded = false
     private let blackView = UIView()
     private lazy var xOrigin = self.view.frame.width - 80
     
@@ -44,12 +35,14 @@ class ContainerViewController: UIViewController {
     // MARK: - Selectors
     
     @objc func dismissMenu() {
-        isExpanded = false
-        animateMenu(shouldExpand: isExpanded)
+        viewModel.isExpanded = false
+        animateMenu(shouldExpand: viewModel.isExpanded)
     }
-    
-    // MARK: - Helper Functions
-    
+}
+
+// MARK: - Configure UI
+
+extension ContainerViewController {
     private func configureUI() {
         view.backgroundColor = .systemBackground
         configureMenuVC()
@@ -58,7 +51,7 @@ class ContainerViewController: UIViewController {
     
     private func configureMenuTabBar() {
         menuTabBar.tabBarDelegate = self
-        menuTabBar.addMenuOptions(options: menuButtons)
+        menuTabBar.addMenuOptions(options: viewModel.menuOptions)
         
         addChild(menuTabBar)
         menuTabBar.didMove(toParent: self)
@@ -68,7 +61,7 @@ class ContainerViewController: UIViewController {
     
     private func configureMenuVC() {
         menuVC.delegate = self
-        menuVC.addMenuOptions(options: menuButtons)
+        menuVC.addMenuOptions(options: viewModel.menuOptions)
         
         addChild(menuVC)
         menuVC.didMove(toParent: self)
@@ -108,24 +101,30 @@ class ContainerViewController: UIViewController {
             }, completion: completion)
         }
     }
+    
+    func toggleMenuWithAnimation() {
+        viewModel.isExpanded.toggle()
+        animateMenu(shouldExpand: viewModel.isExpanded)
+    }
 }
+
+// MARK: - MenuViewControllerDelegate
 
 extension ContainerViewController: MenuViewControllerDelegate {
     func handleTabBarToogle() {
-        isExpanded.toggle()
-        animateMenu(shouldExpand: isExpanded)
+        toggleMenuWithAnimation()
     }
     
     func menuButtonTappedWithOption(option: MenuOptions) {
         menuTabBar.selectedIndexChangedWith(index: option.index)
-        isExpanded.toggle()
-        animateMenu(shouldExpand: isExpanded)
+        toggleMenuWithAnimation()
     }
 }
 
+// MARK: - MenuTabBarControllerDelegate
+
 extension ContainerViewController: MenuTabBarControllerDelegate {
     func handleMenuToggle() {
-        isExpanded.toggle()
-        animateMenu(shouldExpand: isExpanded)
+        toggleMenuWithAnimation()
     }
 }

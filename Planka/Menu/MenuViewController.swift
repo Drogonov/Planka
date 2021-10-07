@@ -17,8 +17,7 @@ class MenuViewController: UIViewController {
     
     // MARK: - Properties
     
-    private var menuButtons: [MenuOptions] = []
-    
+    private var menuOptions: [MenuOptions] = []
     weak var delegate: MenuViewControllerDelegate?
     
     // MARK: - Lifecycle
@@ -44,6 +43,15 @@ class MenuViewController: UIViewController {
     
     // MARK: - Helper Functions
     
+    func addMenuOptions(options: [MenuOptions]) {
+        menuOptions = options
+        configureMenu()
+    }
+}
+
+// MARK: - Configure UI
+
+extension MenuViewController {
     private func configureUI() {
         view.backgroundColor = .systemBackground
         configureMenu()
@@ -51,7 +59,7 @@ class MenuViewController: UIViewController {
     
     private func configureMenu() {
         let menuView = MenuView(
-            menuButtons: menuButtons,
+            menuButtons: menuOptions,
             buttonTapped: { option in
                 self.delegate?.menuButtonTappedWithOption(option: option)
             }
@@ -71,10 +79,5 @@ class MenuViewController: UIViewController {
             trailing: view.safeAreaLayoutGuide.rightAnchor,
             paddingRight: 80
         )
-    }
-    
-    func addMenuOptions(options: [MenuOptions]) {
-        menuButtons = options
-        configureMenu()
     }
 }
