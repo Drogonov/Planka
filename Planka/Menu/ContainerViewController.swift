@@ -88,18 +88,36 @@ extension ContainerViewController {
     
     func animateMenu(shouldExpand: Bool, completion: ((Bool) -> Void)? = nil) {
         if shouldExpand {
-            UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0, options: .curveEaseInOut, animations: {
-                self.menuTabBar.view.frame.origin.x = self.xOrigin
-                self.blackView.frame.origin.x = self.xOrigin
-                self.blackView.alpha = 1
-            }, completion: nil)
+            expandAnimation(
+                animation: {
+                    self.menuTabBar.view.frame.origin.x = self.xOrigin
+                    self.blackView.frame.origin.x = self.xOrigin
+                    self.blackView.alpha = 1
+                },
+                completion: completion
+            )
         } else {
             self.blackView.alpha = 0
-            UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0, options: .curveEaseInOut, animations: {
-                self.menuTabBar.view.frame.origin.x = 0
-                self.blackView.frame.origin.x = 0
-            }, completion: completion)
+            expandAnimation(
+                animation: {
+                    self.menuTabBar.view.frame.origin.x = 0
+                    self.blackView.frame.origin.x = 0
+                },
+                completion: completion
+            )
         }
+    }
+    
+    func expandAnimation(animation: @escaping() -> Void, completion: ((Bool) -> Void)?) {
+        UIView.animate(
+            withDuration: 0.5,
+            delay: 0,
+            usingSpringWithDamping: 0.8,
+            initialSpringVelocity: 0,
+            options: .curveEaseInOut,
+            animations: animation,
+            completion: completion
+        )
     }
     
     func toggleMenuWithAnimation() {
@@ -116,8 +134,9 @@ extension ContainerViewController: MenuViewControllerDelegate {
     }
     
     func menuButtonTappedWithOption(option: MenuOptions) {
-        menuTabBar.selectedIndexChangedWith(index: option.index)
-        toggleMenuWithAnimation()
+        menuTabBar.selectedIndexChangedWith(index: option.index, completion: {
+            toggleMenuWithAnimation()
+        })
     }
 }
 

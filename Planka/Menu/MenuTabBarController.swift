@@ -16,7 +16,7 @@ class MenuTabBarController: UITabBarController, UITabBarControllerDelegate {
     // MARK: - Properties
     
     lazy var companyVC = CompanyViewController()
-    lazy var laborantsVC = LaborantsViewController()
+    lazy var laborantsVC = ModelBuilder.createLaborantsModule()
     lazy var baseStationsVC = BaseStationsViewController()
     lazy var thermalRodsVC = ThermalRodsViewController()
     lazy var storageVC = StorageViewController()
@@ -53,8 +53,9 @@ class MenuTabBarController: UITabBarController, UITabBarControllerDelegate {
     
     // MARK: - Helper Functions
     
-    func selectedIndexChangedWith(index: Int) {
+    func selectedIndexChangedWith(index: Int, completion: () -> Void) {
         selectedIndex = index
+        completion()
     }
     
     func addMenuOptions(options: [MenuOptions]) {
