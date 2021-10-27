@@ -10,17 +10,23 @@ import SwiftUI
 struct LaborantsView: View {
     let laborants: [Laborant]
     var laborantDeleted: (Laborant) -> Void
+    var laborantTapped: (Laborant) -> Void
     
     var body: some View {
         List {
             ForEach(laborants) { laborant in
-                HStack {
-                    Image(systemName: "person")
-                        .foregroundColor(.primary)
-                        .frame(width: 32)
-                    Text(laborant.name)
-                        .foregroundColor(.primary)
-                    Spacer()
+                Button {
+                    laborantTapped(laborant)
+
+                } label: {
+                    HStack {
+                        Image(systemName: "person")
+                            .foregroundColor(.primary)
+                            .frame(width: 32)
+                        Text(laborant.name)
+                            .foregroundColor(.primary)
+                        Spacer()
+                    }
                 }
             }
             .onDelete { row in
@@ -30,16 +36,13 @@ struct LaborantsView: View {
         }
         .padding(.vertical, 16)
     }
-    
-    func delete(at offsets: IndexSet) {
-        
-    }
 }
 
 struct LaborantsView_Previews: PreviewProvider {
     static var previews: some View {
         LaborantsView(laborants: [Laborant(name: "Иван"),
                                   Laborant(name: "Екатерина")],
-                      laborantDeleted: { _ in })
+                      laborantDeleted: { _ in },
+                      laborantTapped: { _ in})
     }
 }

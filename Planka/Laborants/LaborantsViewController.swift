@@ -8,6 +8,10 @@
 import UIKit
 import SwiftUI
 
+protocol LaborantsViewProtocol: AnyObject {
+    func setLaborants(laborants: [Laborant])
+}
+
 class LaborantsViewController: UIViewController {
     // MARK: - Properties
     var presenter: LaborantsPresenterProtocol!
@@ -48,6 +52,10 @@ class LaborantsViewController: UIViewController {
             laborants: laborants,
             laborantDeleted: { laborant in
                 self.presenter.deleteLaborant(laborant: laborant)
+                debugPrint("laborant deleted")
+            },
+            laborantTapped: { laborant in
+                debugPrint("laborant tapped")
             }
         )
         addLaborantsViewToVC(laborantsView: laborantsView)

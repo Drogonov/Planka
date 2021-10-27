@@ -7,15 +7,6 @@
 
 import Foundation
 
-struct Laborant: Identifiable {
-    let id = UUID()
-    var name: String
-}
-
-protocol LaborantsViewProtocol: AnyObject {
-    func setLaborants(laborants: [Laborant])
-}
-
 protocol LaborantsPresenterProtocol: AnyObject {
     init(view: LaborantsViewProtocol, laborants: [Laborant])
     func addLaborant(laborant: Laborant)

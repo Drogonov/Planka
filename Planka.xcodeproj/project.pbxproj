@@ -24,6 +24,8 @@
 		84832E822722E42D00889C92 /* LaborantsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84832E812722E42D00889C92 /* LaborantsPresenter.swift */; };
 		84832E842722EFB100889C92 /* LaborantsBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84832E832722EFB100889C92 /* LaborantsBuilder.swift */; };
 		84832E862722F2A200889C92 /* Extension + ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84832E852722F2A200889C92 /* Extension + ViewController.swift */; };
+		84832E882722F64E00889C92 /* Laborant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84832E872722F64E00889C92 /* Laborant.swift */; };
+		84832E8A27230EBA00889C92 /* LaborantsTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84832E8927230EBA00889C92 /* LaborantsTest.swift */; };
 		84D398D6270B62E100D0ABE1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D398D5270B62E100D0ABE1 /* AppDelegate.swift */; };
 		84D398D8270B62E100D0ABE1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D398D7270B62E100D0ABE1 /* SceneDelegate.swift */; };
 		84D398DF270B62E200D0ABE1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84D398DE270B62E200D0ABE1 /* Assets.xcassets */; };
@@ -68,6 +70,8 @@
 		84832E812722E42D00889C92 /* LaborantsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaborantsPresenter.swift; sourceTree = "<group>"; };
 		84832E832722EFB100889C92 /* LaborantsBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaborantsBuilder.swift; sourceTree = "<group>"; };
 		84832E852722F2A200889C92 /* Extension + ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + ViewController.swift"; sourceTree = "<group>"; };
+		84832E872722F64E00889C92 /* Laborant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Laborant.swift; sourceTree = "<group>"; };
+		84832E8927230EBA00889C92 /* LaborantsTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaborantsTest.swift; sourceTree = "<group>"; };
 		84D398D2270B62E100D0ABE1 /* Planka.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Planka.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84D398D5270B62E100D0ABE1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		84D398D7270B62E100D0ABE1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -137,6 +141,7 @@
 		841CE43D270EE6CF00E9DA64 /* Laborants */ = {
 			isa = PBXGroup;
 			children = (
+				84832E872722F64E00889C92 /* Laborant.swift */,
 				841CE43E270EE6F100E9DA64 /* LaborantsViewController.swift */,
 				84832E7F2722D80800889C92 /* LaborantsView.swift */,
 				84832E812722E42D00889C92 /* LaborantsPresenter.swift */,
@@ -231,6 +236,7 @@
 			isa = PBXGroup;
 			children = (
 				84D398EC270B62E300D0ABE1 /* PlankaTests.swift */,
+				84832E8927230EBA00889C92 /* LaborantsTest.swift */,
 			);
 			path = PlankaTests;
 			sourceTree = "<group>";
@@ -374,6 +380,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84832E882722F64E00889C92 /* Laborant.swift in Sources */,
 				841CE450270F1E1800E9DA64 /* BaseStationsViewController.swift in Sources */,
 				841CE452270F1E2A00E9DA64 /* ThermalRodsViewController.swift in Sources */,
 				84D398D6270B62E100D0ABE1 /* AppDelegate.swift in Sources */,
@@ -400,6 +407,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84832E8A27230EBA00889C92 /* LaborantsTest.swift in Sources */,
 				84D398ED270B62E300D0ABE1 /* PlankaTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
